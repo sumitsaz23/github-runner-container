@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO=$REPO
+REPO=$GITHUB_REPOSITORY
 ACCESS_TOKEN=$GH_ACCESS_TOKEN
 
 REG_TOKEN=$(curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/orgs/${REPO}/actions/runners/registration-token | jq .token --raw-output)

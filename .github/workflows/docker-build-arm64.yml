@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image (arm-64))
 
 on:
   #push:
@@ -27,8 +27,10 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: sumitsur74/github-runner:${{ vars.RUNNER_VERSION }}
           build-args: |
             RUNNER_VERSION=${{ vars.RUNNER_VERSION }}
             ACCESS_TOKEN=${{ secrets.GH_ACCESS_TOKEN }}
             GITHUB_REPOSITORY=${{ github.repository }}
+            PLATFORM=arm64

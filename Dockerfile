@@ -6,6 +6,7 @@ LABEL description="GitHub Actions self-hosted runner in a container"
 # set the github runner version
 #update the version as needed from https://github.com/actions/runner/releases
 ARG RUNNER_VERSION
+ARG PLATFORM
 
 # update the base packages and add a non-sudo user (docker) to run the container
 # this is necessary to run the github actions runner as it requires a non-root user
@@ -19,8 +20,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 
 # cd into the user directory, download and unzip the github actions runner
 RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
-    && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
-    && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
+    && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-${PLATFORM}-${RUNNER_VERSION}.tar.gz \
+    && tar xzf ./actions-runner-linux-${PLATFORM}-${RUNNER_VERSION}.tar.gz
 
 # install some additional dependencies
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh

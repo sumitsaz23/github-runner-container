@@ -3,7 +3,7 @@
 REPO=$GITHUB_REPOSITORY
 ACCESS_TOKEN=$GH_ACCESS_TOKEN
 
-REG_TOKEN=$(curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/orgs/${REPO}/actions/runners/registration-token | jq .token --raw-output)
+REG_TOKEN=$(curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/repos/${REPO}/actions/runners/registration-token | jq .token --raw-output)
 
 cd /home/docker/actions-runner
 

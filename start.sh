@@ -6,7 +6,7 @@ ACCESS_TOKEN=$GH_ACCESS_TOKEN
 echo "REPO ${REPO}"
 echo "ACCESS_TOKEN ${ACCESS_TOKEN}"
 
-apt-get update && apt-get install -y curl jq
+#apt-get update && apt-get install -y curl jq
 
 curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/repos/${REPO}/actions/runners/registration-token | jq .token --raw-output
 

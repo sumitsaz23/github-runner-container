@@ -35,5 +35,3 @@ jobs:
           tags: sumitsur74/github-runner:${{ vars.RUNNER_VERSION }}
           build-args: |
             RUNNER_VERSION=${{ vars.RUNNER_VERSION }}
-            #ACCESS_TOKEN=${{ secrets.GH_ACCESS_TOKEN }}
-            #GITHUB_REPOSITORY=${{ github.repository }}

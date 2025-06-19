@@ -1,5 +1,5 @@
 #Base image
-FROM ubuntu:latest
+FROM ubuntu:22.04
 LABEL maintainer="Sumit sur"
 LABEL description="GitHub Actions self-hosted runner in a container"
 

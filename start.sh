@@ -6,6 +6,8 @@ ACCESS_TOKEN=$GH_ACCESS_TOKEN
 echo "REPO ${REPO}"
 echo "ACCESS_TOKEN ${ACCESS_TOKEN}"
 
+curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/repos/${REPO}/actions/runners/registration-token | jq .token --raw-output
+
 REG_TOKEN=$(curl -sX POST -H "Authorization: token ${ACCESS_TOKEN}" https://api.github.com/repos/${REPO}/actions/runners/registration-token | jq .token --raw-output)
 
 
@@ -13,7 +15,7 @@ echo "REG_TOKEN ${REG_TOKEN}"
 
 cd /home/docker/actions-runner
 
-./config.sh --url https://github.com/${REPO} --token ${REG_TOKEN} --unattended
+./config.sh --url https://github.com/${REPO} --token ${REG_TOKEN}
 
 cleanup() {
     echo "Removing runner..."

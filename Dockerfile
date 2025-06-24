@@ -18,7 +18,7 @@ RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
 # add additional packages as necessary
 RUN apt-get update -y
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl jq build-essential
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl jq build-essential openssh-client
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu-dev libssl-dev libffi-dev python3 python3-venv python3-dev python3-pip --fix-missing   
 

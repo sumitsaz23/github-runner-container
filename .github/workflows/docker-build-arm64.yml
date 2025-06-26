@@ -1,8 +1,8 @@
 name: Build and Push Docker Image (arm-64))
 
 on:
-  push:
-    branches: [ main ]  # Or 'master'
+  # push:
+  #   branches: [ main ]  # Or 'master'
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:

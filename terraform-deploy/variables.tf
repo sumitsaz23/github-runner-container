@@ -1,6 +1,6 @@
 variable "GH_TOKEN" {
   type      = string
-  sensitive = true
+  sensitive = false
 }
 
 

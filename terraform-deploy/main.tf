@@ -22,6 +22,6 @@ resource "docker_container" "tf-runner" {
   env = [
 
     "GH_ACCESS_TOKEN=${var.GH_TOKEN}",
-    "GITHUB_REPOSITORY=${var.GITHUB_REPO}"
+    "GITHUB_REPOSITORY=  ${var.GITHUB_REPO}"
   ]
 }

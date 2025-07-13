@@ -12,6 +12,6 @@ terraform {
 #}
 
 provider "docker" {
-  host     = "ssh://pi@pi:22"
+  host     = "ssh://pi@192.168.1.10:22"
   ssh_opts = ["-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null"]
 }
